@@ -29,7 +29,16 @@ import com.example.myproject1229.R;
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        switch(position) {
+            case 0:
+                return Address.newInstance();
+            case 1:
+                return Image.newInstance();//탭 2로 변경(fragment 클래스인지 확인)
+            case 2:
+                return PlaceholderFragment.newInstance(3);//tab3로 변경
+            default:
+                return null;
+        }
     }
 
     @Nullable
